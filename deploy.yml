@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactjs-app
+  labels:
+    app: reactjs-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: reactjs-app
+  template:
+    metadata:
+      labels:
+        app: reactjs-app
+    spec:
+      containers:
+      - name: reactjs-app
+        image: gcr.io/your-gcp-project-id/reactjs-app:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reactjs-app-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: reactjs-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+
