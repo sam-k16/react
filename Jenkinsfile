@@ -7,7 +7,7 @@ pipeline {
         IMAGE_TAG = 'v1'                
         CLUSTER_NAME = 'my-first-cluster-2'        
         CLUSTER_ZONE = 'us-central1-c'            
-        SERVICE_ACCOUNT_KEY = credentials('servicekey')
+        SERVICE_ACCOUNT_KEY = credentials('jenfile')
     }
 
     stages {
