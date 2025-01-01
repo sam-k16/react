@@ -45,5 +45,12 @@ pipeline {
                 }
             }
         }
+        stage(check) {
+            steps {
+                script {
+                    sh "kubectl get pods"
+                }
+            }
+        }
     }
 }      
