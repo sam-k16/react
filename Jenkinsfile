@@ -38,5 +38,12 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to GKE') {
+            steps {
+                script {
+                    sh "kubectl apply -f deploy.yml"
+                }
+            }
+        }
     }
 }      
