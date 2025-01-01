@@ -31,5 +31,12 @@ pipeline {
                 }
             }
         }
+        stage('Push Docker Image to GCR') {
+            steps {
+                script {
+                    sh "docker push asia-south1-docker.pkg.dev/symmetric-aura-445306-q2/samrepo/simple_app:v2"
+                }
+            }
+        }
     }
 }      
