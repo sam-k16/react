@@ -24,7 +24,7 @@ pipeline {
                 }
             }
         }
-     stage {
+     stage (gcloud auth) {
             steps {
                 script {
                     sh "gcloud auth configure-docker asia-south1-docker.pkg.dev"
