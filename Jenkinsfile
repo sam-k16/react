@@ -9,7 +9,7 @@ pipeline {
         CLUSTER_ZONE = 'us-central1-c'            
        
     }
-
+#first jenkin file
     stages {
         stage('Checkout Code') {
             steps {
