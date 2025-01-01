@@ -17,4 +17,11 @@ pipeline {
             }
         }
     }
+     stage('Build Docker Image') {
+            steps {
+                script {
+                    sh "docker build -t asia-south1-docker.pkg.dev/symmetric-aura-445306-q2/samrepo/simple_app ."
+                }
+            }
+        }
 }      
